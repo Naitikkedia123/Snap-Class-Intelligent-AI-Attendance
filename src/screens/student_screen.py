@@ -86,7 +86,7 @@ def student_dashboard():
             width="stretch",
             key="enroll_subject_btn"
         ):
-            enroll_dialog()
+            enroll_dialog(student_id)
 
     st.divider()
 
