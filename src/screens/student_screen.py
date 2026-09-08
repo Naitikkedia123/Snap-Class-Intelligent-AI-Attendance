@@ -48,9 +48,9 @@ def student_dashboard():
         header_dashboard()
 
     with c2:
-
-        st.subheader(
-            f"Welcome, {student_data['name']}"
+        st.markdown(
+            f"<span style='color:#111111 !important; font-family:\"Outfit\", sans-serif !important; font-size:1.5rem; font-weight:700;'>Welcome, {student_data['name']}</span>",
+            unsafe_allow_html=True
         )
 
         if st.button(

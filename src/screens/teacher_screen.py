@@ -37,14 +37,20 @@ def teacher_screen():
 
 
 
-
 def teacher_dashboard():
     teacher_data = st.session_state.teacher_data
+
     c1, c2 = st.columns(2, vertical_alignment='center', gap='xxlarge')
+
     with c1:
         header_dashboard()
+
     with c2:
-        st.subheader(f"""Welcome, {teacher_data['name']} """)
+        st.markdown(
+            f"<span style='color:#111111 !important; font-family:\"Outfit\", sans-serif !important; font-size:1.5rem; font-weight:700;'>Welcome, {teacher_data['name']}</span>",
+            unsafe_allow_html=True
+        )
+
         if st.button("Logout", type='secondary', key='loginbackbtn', shortcut="control+backspace"):
             st.session_state['is_logged_in'] = False
             del st.session_state.teacher_data 
